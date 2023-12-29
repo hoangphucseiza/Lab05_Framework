@@ -1,0 +1,11 @@
+﻿@model TEST01.Models.KhachHang
+
+<h1>Chào mừng đến với trang chủ của khách hàng</h1>
+
+<p>Mã KH: @Model.MaKH</p>
+<p>Họ và tên: @Model.Ho @Model.Ten</p>
+<p>Ngày sinh: @Model.NgaySinh.ToShortDateString()</p>
+<p>Địa chỉ: @Model.DiaChi</p>
+<p>Số điện thoại: @Model.SDT</p>
+
+<button onclick="window.location.href='@Url.Action("DatMonAn", "HoaDon", new { MaKH = Model.MaKH })'">Đặt món ăn cho khách hàng @Model.MaKH</button>

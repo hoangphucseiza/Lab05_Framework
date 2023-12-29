@@ -1,0 +1,30 @@
+﻿@model List<TEST01.Models.Account>
+@{
+}
+<h1>Danh sách tài khoản</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên đăng nhập
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassWord)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model TEST01.Models.DangKyModel
+@{
+}
+<h1>Đăng ký</h1>
+<form method="post" action="DangKy" >
+    <label for="username"><b>Tên đăng nhập</b></label>
+    <input type="text" placeholder="Nhập tên đăng nhập" name="UserName" required asp-for="UserName">
+
+    <br />
+
+    <label for="password"><b>Mật khẩu</b></label>
+    <input type="password" placeholder="Nhập mật khẩu" name="PassWord" required  asp-for="PassWord">
+
+    <br />
+
+    <label for="firstName"><b>Họ</b></label>
+    <input type="text" placeholder="Nhập họ" name="Ho" required asp-for="Ho">
+
+    <br />
+
+    <label for="lastName"><b>Tên</b></label>
+    <input type="text" placeholder="Nhập tên" name="Ten" required asp-for="Ten">
+
+    <br />
+
+    <label for="dob"><b>Ngày sinh</b></label>
+    <input type="date" name="NgaySinh" required asp-for="NgaySinh">
+
+    <br />
+
+    <label for="address"><b>Địa chỉ</b></label>
+    <input type="text" placeholder="Nhập địa chỉ" name="DiaChi" required asp-for="DiaChi">
+
+    <br />
+
+    <label for="phoneNumber"><b>Số điện thoại</b></label>
+    <input type="tel" placeholder="Nhập số điện thoại" name="SDT" pattern="[0-9]{10}" required asp-for="SDT">
+
+    <br />
+
+    <button type="submit">Đăng ký</button>
+</form>

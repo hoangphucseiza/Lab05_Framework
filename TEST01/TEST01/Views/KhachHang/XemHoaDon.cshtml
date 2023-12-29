@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HoaDonViewModel>
+@{
+}
+
+<h2>Chọn tên khách hàng đã có hóa đơn sau đây</h2>
+<select id="choice" class="mb-3">
+    @foreach (var item in Model)
+    {
+        <option value="@item.KhachHangId">@item.TenKhachHang</option>
+    }
+</select>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mã hóa đơn</th>
+            <th>Ngày đặt</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody id="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td onclick="window.location.href='@Url.Action("XemChiTietHoaDon", "HoaDon", new { MaHD = item.MaHD })'"><a>@item.MaHD</a></td>
+                <td>@item.NgayHD</td>
+                <td>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to delete this HoaDon?');"
+                          action="@Url.Action("XoaHoaDon", "HoaDon", new { MaHD = @item.MaHD })">
+                        <button type="submit">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
